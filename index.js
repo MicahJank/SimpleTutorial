@@ -8,6 +8,15 @@ const animate = () => {
     hue = shiftHue(hue);
     const color = `hsl(${hue}, 100%, 50%)`;
     $('a-sphere').setAttribute('color', color);
+
+
+    const variation = Math.sin(Date.now() / 1000);
+    const position = `0 ${1.5 + variation} -3`;
+    $('a-sphere').setAttribute('position', position);
+
+    const rotation = `-90 ${90 * variation} 0`;
+    $('a-plane').setAttribute('rotation', rotation);
+    $('a-plane').setAttribute('color', color);
     requestAnimationFrame(animate);
 };
 
